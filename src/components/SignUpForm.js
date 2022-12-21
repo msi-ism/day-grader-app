@@ -29,7 +29,7 @@ const SignUpForm = () => {
             }
             console.log(JSON.stringify(formData))
             const user = await signUp(formData)
-            // console.log(user)
+            console.log(user)
             // setUser(user)
         } catch {
             // ^ An error occurred

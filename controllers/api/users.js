@@ -14,7 +14,7 @@ async function create(req, res) {
     const user = await User.create(req.body)
     // ^ token will be a string
     const token = createJWT(user)
-    // ^ Use res.Json to send back a string - client code needs to take this into consideration
+    // ^ Use res.json to send back a string - client code needs to take this into consideration
     res.json(token)    
     } catch (error) {
     // ^ Client will check for non-2xx status code

@@ -12,13 +12,13 @@ const PORT = process.env.PORT || 3001
 
 
 app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({extended: true}));
 
 
 // ^ Configure both serve-favicon & static middleware to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
 
 
 // ! API Routes go here BEFORE the 'catch all' routes
