@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 
 const NavBar = ({user, setUser}) => {
-    // const [user,  setUser] = useState(getUser())
     {console.log(user)}
     // const handleLogOut = () => {
     //     userService.logOut()
@@ -11,7 +10,6 @@ const NavBar = ({user, setUser}) => {
     // }
     return(
         <nav className='navbar'>
-            <h1>Hello, {user.name}!</h1>
         <div className='navlogo'>
             <img className='logo' alt='Logo'/>
         </div>

@@ -6,14 +6,25 @@ import AuthPage from './pages/AuthPage';
 import {Routes, Route} from 'react-router-dom'
 import {getUser} from '../src/utilities/users-service'
 import NavBar from './components/NavBar';
+import MainPage from './pages/MainPage'
 
 function App() {
-  const [user, setUser] = useState(getUser());
+  const [user,  setUser] = useState(getUser())
   return (
-    <div className="App">
-      <NavBar user={user}/>
-      <AuthPage/>
-    </div>
+    <main className="App">
+      { user? (
+      <>
+          <NavBar user={user} />
+          <h1>Grade Your Days - Improve Your Life</h1>
+          <MainPage />
+        </>
+      ) : (
+        <>
+        <NavBar setUser={setUser}/>  
+        <AuthPage setUser={setUser} />
+      </>
+      )}
+    </main>
   );
 }
 
