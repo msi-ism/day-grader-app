@@ -15,7 +15,6 @@ function App() {
       { user? (
       <>
           <NavBar user={user} />
-          <h1>Grade Your Days - Improve Your Life</h1>
           <MainPage />
         </>
       ) : (

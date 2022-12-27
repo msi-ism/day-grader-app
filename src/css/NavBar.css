@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    background-color: rgba(0, 0, 0, .1);
+    height: 35px;
+    width: 100%;
+    padding: 20px;
+    font-family: var(--font-nav);
+  }
+  
+  .navbar > a, .navname {
+    color: white;
+  }
+  
+  .navbar > .navmenu {
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .navmenu > .navname {
+    color: white;
+  }
+  
+  .navbar > Link {
+    color: white;
+  }
+  
+  .logo {
+    width: auto;
+    height: 50px;
+    padding: 15px;
+  }
+  

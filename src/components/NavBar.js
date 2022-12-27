@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import '../css/NavBar.css'
 // import {getUser} from '../utilities/users-service'
 
 
@@ -10,13 +11,13 @@ const NavBar = ({user, setUser}) => {
     // }
     return(
         <nav className='navbar'>
-        <div className='navlogo'>
-            <img className='logo' alt='Logo'/>
-        </div>
-        <div className='navmenu'>
-            {user ? <><span className='navname'>  Welcome, {user.name} Log Out</span></> : ''}
-        </div>
-    </nav>
+            <div className='navlogo'>
+                <img className='logo' alt='Logo'/>
+            </div>
+            <div className='navmenu'>
+                {user ? <><span className='navname'>  Welcome, {user.name} Log Out</span></> : ''}
+            </div>
+        </nav>
     )
 }
 

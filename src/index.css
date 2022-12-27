@@ -9,8 +9,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding: 0vmin;
-  height: 100;
-  width: 100%;
+  height: 100%;
+  width: 100vw;
 
 }
 
@@ -27,6 +27,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 }
 
 h1 {
@@ -89,39 +90,6 @@ form > button {
   width: auto;
 }
 
-/** Nav-Bar Styling */
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 9vmin;
-  background-color: rgba(0, 0, 0, .1);
-  width: 100vw;
-  padding: 25px;
-  font-family: var(--font-nav);
-}
-
-.navbar > a, .navname {
-  color: white;
-}
-
-.navbar > .navmenu {
-  display: flex;
-  gap: 15px;
-}
-
-.navmenu > .navname {
-  color: white;
-}
-
-.navbar > Link {
-  color: white;
-}
-
-.logo {
-  width: auto;
-  height: 50px;
-}
 
 
