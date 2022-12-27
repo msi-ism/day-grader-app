@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import '../css/NavBar.css'
-// import {getUser} from '../utilities/users-service'
+import logo from '../images/grade.png'
+
 
 
 const NavBar = ({user, setUser}) => {
@@ -12,7 +13,7 @@ const NavBar = ({user, setUser}) => {
     return(
         <nav className='navbar'>
             <div className='navlogo'>
-                <img className='logo' alt='Logo'/>
+                <img className='logo' src={logo} alt='Logo'/>
             </div>
             <div className='navmenu'>
                 {user ? <><span className='navname'>  Welcome, {user.name} Log Out</span></> : ''}
