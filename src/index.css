@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Just+Another+Hand&display=swap');
 
 body {
   margin: 0;
@@ -34,10 +33,17 @@ main {
   width: 100vw;
 }
 
-h1, h4 {
-  font-family: 'Patrick Hand', cursive;
+h1 {
+  font-family: 'Gochi Hand', cursive;
   color: black;
+  font-size: 40px;
 }
+
+h4 {
+  font-size: 30px;
+  font-family: 'Just Another Hand', cursive;
+}
+
 
 :root {
   --white: #FFFFFF;
