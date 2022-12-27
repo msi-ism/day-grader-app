@@ -3,7 +3,7 @@
     height: auto;
     max-width: 100%;
     background: white;
-    border: 1px solid #a0a096;
+    border: 3px solid #a0a096;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.125em;
     padding: 25px;
@@ -29,7 +29,7 @@
   }
   .react-calendar button {
     margin: 0;
-    border: 0;
+
     outline: none;
   }
   .react-calendar button:enabled:hover {
@@ -43,6 +43,7 @@
   .react-calendar__navigation button {
     min-width: 44px;
     background: none;
+    border: 0;
   }
   .react-calendar__navigation button:disabled {
     background-color: #f0f0f0;
@@ -84,6 +85,8 @@
     background: none;
     text-align: center;
     line-height: 16px;
+    border: 1px solid black;
+
   }
   .react-calendar__tile:disabled {
     background-color: #f0f0f0;
