@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Day = () => {
+const Day = ({day, onClick}) => {
+    const className = `day ${day.value === 'padding' ? 'padding' : ''} ${day.isCurrentDay ? 'currentDay' : ''}`
     return (
-        <div>
-            <h1>Hello Day</h1>
+        <div onClick={onClick} className={className}>
+            {day.value === 'padding' ? '' : day.value}
+            {day.event && <div className='event'>{day.event.title}</div>}
         </div>
     );
 }
