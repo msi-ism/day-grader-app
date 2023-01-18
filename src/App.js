@@ -10,6 +10,7 @@ import MainPage from './pages/MainPage'
 
 function App() {
   const [user,  setUser] = useState(getUser())
+
   return (
     <main className="App">
       { user? (

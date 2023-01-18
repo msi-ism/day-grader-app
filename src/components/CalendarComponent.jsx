@@ -1,0 +1,115 @@
+import React from "react";
+import CalendarHeader from "./CalendarHeader";
+import {useState, useEffect} from 'react'
+import Day from "./Day";
+import { setDate } from "date-fns";
+
+const CalendarComponent = () => {
+
+// //^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
+const [nav, setNav] = useState(0)
+// ^ setting days
+const [days, setDays] = useState([])
+// ^ setting date displayed
+const [dateDisplay, setDateDisplay] = useState()
+// ^ setting clicked state for days
+const [clicked, setClicked] = useState()
+// ^ setting state for events - checks local storage for event object and returns it or empty array if N/A
+const [events, setEvents] = useState(localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [])
+
+// ^ Helper Function - for each event we want to find the one where the event date matches the date that is passed
+const eventForDate = date => events.find(e => e.date === date)
+
+
+// ^ writing function to check for date changes in local storage. Each time events changes, the events is updated in local storage
+useEffect(() => {
+    localStorage.setItem('events', JSON.stringify(events));
+  }, [events])
+
+// ^ setting up effect to re-load components on events, or nav change
+useEffect(() => {
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+    const date = new Date()
+    const day  = date.getDate()
+    const month = date.getMonth()
+    const year = date.getFullYear()
+
+
+    const firstDayOfMonth = new Date(year, month, 1)
+    const daysInMonth = new Date(year, month + 1, 0).getDate()
+
+    const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric'
+    })
+
+    setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'long' })} ${year}`)
+
+    const paddingDays = weekdays.indexOf(dateString.split(', ')[0])
+
+    const daysArr = []
+
+    for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+        const dayString = `${month + 1}/${i - paddingDays}/${year}`
+
+        if (i > paddingDays) {
+            daysArr.push({
+                value: i - paddingDays,
+                event: eventForDate(dayString),
+                isCurrentDay: i - paddingDays === day && nav === 0 ? true : false,
+                date: '', 
+            })
+            
+        } else {
+            daysArr.push({
+                value: 'padding',
+                event: null,
+                isCurrentDay: false,
+                date: dayString, 
+            })
+        }
+
+    }
+    
+
+    // ^ sets correct month depending on what nav is
+    if (nav !==0) {
+        date.setMonth(new Date().getMonth() + nav)
+    }
+    setDays(daysArr)
+}, [events, nav])
+
+
+  return (
+    <div id="container">
+      <CalendarHeader />
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+      <div id='calendar'>
+        {days.map((day, idx) => ( 
+            <Day
+            key={idx} 
+            day={day}
+            onClick={() => {
+                if (day.value !== 'padding') {
+                    setClicked(day.date)
+                }
+            }}
+            />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CalendarComponent;

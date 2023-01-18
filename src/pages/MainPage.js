@@ -1,5 +1,6 @@
 import React from 'react';
 import CalendarComponent from '../components/CalendarComponent';
+import Day from '../components/Day';
 
 const MainPage = () => {
     return (
