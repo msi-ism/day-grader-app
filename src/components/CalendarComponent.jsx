@@ -9,7 +9,7 @@ import DeleteGradeModal from "./DeleteGradeModal";
 const CalendarComponent = () => {
 
 // //^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
-const [nav, setNav] = useState(0)
+const [nav, setNav] = useState(2)
 // ^ setting days
 const [days, setDays] = useState([])
 // ^ setting date displayed
@@ -31,15 +31,22 @@ useEffect(() => {
 // ^ setting up effect to re-load components on events, or nav change
 useEffect(() => {
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-
     const date = new Date()
-    console.log(date)
+
+    // ^ sets correct month depending on what nav is
+    if (nav !== 0) {
+        date.setMonth(new Date().getMonth() + nav)
+    }
+
     const day  = date.getDate()
     const month = date.getMonth()
+
     const year = date.getFullYear()
 
 
+
     const firstDayOfMonth = new Date(year, month, 1)
+
     const daysInMonth = new Date(year, month + 1, 0).getDate()
 
     const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
@@ -77,11 +84,6 @@ useEffect(() => {
 
     }
     
-
-    // ^ sets correct month depending on what nav is
-    if (nav !==0) {
-        date.setMonth(new Date().getMonth() + nav)
-    }
     setDays(daysArr)
 }, [events, nav])
 
