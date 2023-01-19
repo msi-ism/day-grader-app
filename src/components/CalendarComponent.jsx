@@ -3,6 +3,8 @@ import CalendarHeader from "./CalendarHeader";
 import {useState, useEffect} from 'react'
 import Day from "./Day";
 import { setDate } from "date-fns";
+import GradeModal from "./GradeModal";
+import DeleteGradeModal from "./DeleteGradeModal";
 
 const CalendarComponent = () => {
 
@@ -13,10 +15,10 @@ const [days, setDays] = useState([])
 // ^ setting date displayed
 const [dateDisplay, setDateDisplay] = useState()
 // ^ setting clicked state for days
-const [clicked, setClicked] = useState()
+const [clicked, setClicked] = useState(null)
 // ^ setting state for events - checks local storage for event object and returns it or empty array if N/A
 const [events, setEvents] = useState(localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [])
-
+console.log(typeof(clicked))
 // ^ Helper Function - for each event we want to find the one where the event date matches the date that is passed
 const eventForDate = date => events.find(e => e.date === date)
 
@@ -31,6 +33,7 @@ useEffect(() => {
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
     const date = new Date()
+    console.log(date)
     const day  = date.getDate()
     const month = date.getMonth()
     const year = date.getFullYear()
@@ -60,7 +63,7 @@ useEffect(() => {
                 value: i - paddingDays,
                 event: eventForDate(dayString),
                 isCurrentDay: i - paddingDays === day && nav === 0 ? true : false,
-                date: '', 
+                date: dayString, 
             })
             
         } else {
@@ -68,7 +71,7 @@ useEffect(() => {
                 value: 'padding',
                 event: null,
                 isCurrentDay: false,
-                date: dayString, 
+                date: '', 
             })
         }
 
@@ -84,8 +87,13 @@ useEffect(() => {
 
 
   return (
+    <>
     <div id="container">
-      <CalendarHeader />
+      <CalendarHeader 
+      dateDisplay={dateDisplay}
+      onNext={() => setNav(nav + 1)}
+      onBack={() => setNav(nav - 1)}
+      />
       <div id="weekdays">
         <div>Sunday</div>
         <div>Monday</div>
@@ -103,12 +111,29 @@ useEffect(() => {
             onClick={() => {
                 if (day.value !== 'padding') {
                     setClicked(day.date)
+                    console.log(clicked)
                 }
             }}
             />
         ))}
       </div>
     </div>
+    { clicked && !eventForDate(clicked) && 
+        <GradeModal 
+        onClose={() => setClicked(null)}
+        onSave={title => {
+            setEvents([ ...events, { title, date: clicked }])
+            setClicked(null)
+        }}/>}
+    { clicked && eventForDate(clicked) && 
+        <DeleteGradeModal 
+        eventText={eventForDate(clicked).title}
+        onClose={() => setClicked(null)}
+        onDelete={() => {
+            setEvents(events.filter(e => e.date !== clicked))
+            setClicked(null)
+        }}/>}
+    </>
   );
 };
 
