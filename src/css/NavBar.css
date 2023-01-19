@@ -5,11 +5,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, .1);
     width: 100%;
-    padding: 20px;
+
     font-family: var(--font-nav);
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
     padding-top: 0;
     padding-bottom: 0;
   }
