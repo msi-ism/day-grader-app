@@ -37,11 +37,14 @@ h1 {
   font-family: 'Gochi Hand', cursive;
   color: black;
   font-size: 40px;
+  margin: 0;
+
 }
 
 h4 {
   font-size: 20px;
   font-family: 'Gochi Hand', cursive;
+  margin: 0;
 }
 
 
@@ -127,8 +130,8 @@ button {
 #header button {
   background-color:#92a1d1;
 }
-#container {
-  width: 770px;
+#calendar-container {
+  width: 700px;
 }
 #weekdays {
   width: 100%;
@@ -146,9 +149,9 @@ button {
   flex-wrap: wrap;
 }
 .day {
-  width: 100px;
+  width: 90px;
   padding: 10px;
-  height: 100px;
+  height: 90px;
   cursor: pointer;
   box-sizing: border-box;
   background-color: white;
@@ -221,4 +224,22 @@ button {
   height: 100vh;
   position: absolute;
   background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+.rubrik-container > .rubrik-header {
+
+  height: auto;
+  margin: 0;
+}
+.rubrik-container > .criteria-container {
+  border-top: 2px solid black;
+  height: 60%;
+}
+
+.rubrik-container > .gpa-container {
+  border-top: 2px solid black;
+  height: auto;
 }

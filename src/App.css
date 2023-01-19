@@ -2,6 +2,10 @@
   text-align: center;
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 700px 1fr;
+  grid-template-rows: 1fr 1fr 700px;
+
 }
 
 .App-logo {
@@ -39,3 +43,36 @@
   }
 }
 
+.App > .main-container {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 2;
+}
+
+.App > .navbar {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.App > .page-header {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-top: 15px;
+
+}
+
+.App > .rubrik-container {
+  grid-row-start: 3;
+  grid-column-start: 3;
+  background-color: pink;
+  height: 500px;
+  border: 2px solid black;
+  margin: 20px;
+  border-radius: 10px;
+  font-family: 'Gochi Hand', cursive;
+
+}

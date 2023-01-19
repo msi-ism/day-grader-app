@@ -90,7 +90,7 @@ useEffect(() => {
 
   return (
     <>
-    <div id="container">
+    <div id="calendar-container">
       <CalendarHeader 
       dateDisplay={dateDisplay}
       onNext={() => setNav(nav + 1)}

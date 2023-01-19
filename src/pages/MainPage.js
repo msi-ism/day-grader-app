@@ -1,13 +1,12 @@
 import React from 'react';
 import CalendarComponent from '../components/CalendarComponent';
 import Day from '../components/Day';
+import Rubrik from '../components/Rubrik';
 
 const MainPage = () => {
     return (
-        <div>
+        <div className='main-container'>
             <div className='calendar-container'>
-                <h1>Grade Your Days - Improve Your Life</h1>
-                <h4>To get where you want to be, you have to know where you are.</h4>
                 <CalendarComponent />
             </div>
         </div>
