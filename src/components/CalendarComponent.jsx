@@ -9,7 +9,7 @@ import DeleteGradeModal from "./DeleteGradeModal";
 const CalendarComponent = () => {
 
 // //^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
-const [nav, setNav] = useState(2)
+const [nav, setNav] = useState(0)
 // ^ setting days
 const [days, setDays] = useState([])
 // ^ setting date displayed
@@ -43,8 +43,6 @@ useEffect(() => {
 
     const year = date.getFullYear()
 
-
-
     const firstDayOfMonth = new Date(year, month, 1)
 
     const daysInMonth = new Date(year, month + 1, 0).getDate()
@@ -59,6 +57,9 @@ useEffect(() => {
     setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'long' })} ${year}`)
 
     const paddingDays = weekdays.indexOf(dateString.split(', ')[0])
+
+
+
 
     const daysArr = []
 
