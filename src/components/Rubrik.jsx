@@ -1,6 +1,12 @@
 import React from 'react';
+import {useState, useEffect} from 'react'
 
 const Rubrik = () => {
+    const [tasks, setTasks] = useState([])
+    tasks.push('Practice guitar', 'drink 32oz of water', 'stunt on these heaux', 'try to take over the world')
+    console.log(tasks)
+
+
     return (
         <div className='rubrik-container'>
             <div className='rubrik-header'>
@@ -8,11 +14,13 @@ const Rubrik = () => {
             </div>
             <div className='criteria-container'>
                 <h2>Daily Tasks</h2>
-                <ul>
-                    <li>Testing out a long Task 1</li>
-                    <li>Task 2</li>
-                    <li>Task 3</li>
-                    <li>Task 4</li>
+                <ul className='task-list'>
+                    {tasks.map((task, idx) => (
+                        <li key={idx} className='task-item'>
+                            <p>{task}</p>
+                        </li>
+                    ))}
+    
                 </ul>
                 <button>Grade your Day</button>
             </div>
