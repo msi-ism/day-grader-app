@@ -18,7 +18,6 @@ const [dateDisplay, setDateDisplay] = useState()
 const [clicked, setClicked] = useState(null)
 // ^ setting state for events - checks local storage for event object and returns it or empty array if N/A
 const [events, setEvents] = useState(localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [])
-console.log(typeof(clicked))
 // ^ Helper Function - for each event we want to find the one where the event date matches the date that is passed
 const eventForDate = date => events.find(e => e.date === date)
 
@@ -57,9 +56,6 @@ useEffect(() => {
     setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'long' })} ${year}`)
 
     const paddingDays = weekdays.indexOf(dateString.split(', ')[0])
-
-
-
 
     const daysArr = []
 

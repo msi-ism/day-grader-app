@@ -6,7 +6,7 @@ import * as userService from '../utilities/users-service'
 
 
 const NavBar = ({user, setUser}) => {
-    {console.log(user)}
+    // {console.log(user)}
     const handleLogOut = () => {
         userService.logOut()
         setUser(null)

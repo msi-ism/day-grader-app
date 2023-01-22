@@ -5,7 +5,6 @@ const Day = ({day, onClick}) => {
 
     const numberGrade = () => {
         let letter = day.event.title
-        console.log(letter)
         if (letter == 'F') {
             return (Math.round(0 * 100) / 100).toFixed(1)
         } else if (letter == 'D') {
