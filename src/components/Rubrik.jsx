@@ -5,13 +5,12 @@ import {useState, useEffect} from 'react'
 
 let currentTaskList = []
 let tasksArr = []
-// console.log(JSON.parse(localStorage.getItem('tasks')))
+console.log(JSON.parse(localStorage.getItem('tasksArr')))
 
 const Rubrik = () => {
-    const [tasks, setTasks] = useState({})
-    const [body, setBody] = useState('')
-    
-    const [error, setError] = useState('')
+    const [tasks, setTasks] = useState(localStorage.getItem('tasksArr') ? JSON.parse(localStorage.getItem('tasksArr')) : [])
+    const [body, setBody] = useState()
+    const [error, setError] = useState()
     
     const handleChange = (evt) => {
         setTasks({...tasks, ['id']: Date.now().toString(), ['body']: evt.target.value, ['isCompleted']: false})
@@ -21,10 +20,9 @@ const Rubrik = () => {
     const addTask = (evt) => {
         evt.preventDefault()
         tasksArr.push(tasks)
-        setTasks(tasks)
-        setBody(tasks.body)
         currentTaskList.push(tasks.body)
         evt.target.reset()
+        setBody(tasks.body)
         // let savedTaskList = JSON.parse(localStorage.getItem('tasks'))
         // console.log(savedTaskList)
         // console.log(currentTaskList)
@@ -33,13 +31,13 @@ const Rubrik = () => {
 
 
     useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(currentTaskList))
+        localStorage.setItem('tasksArr', JSON.stringify(tasksArr))
+    }, [tasks])
 
-    }, [])
-
-
+    
     console.log(tasksArr)
     console.log(currentTaskList)
+    console.log(body)
 
 
 
