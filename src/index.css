@@ -124,8 +124,6 @@ form > button {
   width: auto;
 }
 
-
-
 button {
   margin-right: 2.5px;
   margin-left: 2.5px;
@@ -261,20 +259,17 @@ button:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-
-
-
 .rubrik-container > .rubrik-header {
-
-  height: auto;
+  height: 10%;
   margin: 0;
 }
+
 .rubrik-container > .criteria-container {
   border-top: 2px solid black;
-  height: auto;
+  height: 60%;
 }
 
 .rubrik-container > .gpa-container {
   border-top: 2px solid black;
-  height: auto;
+  height: 20%;
 }

@@ -4,7 +4,9 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 700px 1fr;
-  grid-template-rows: 1fr 1fr 700px;
+  grid-template-rows: 9vmin 1fr 700px;
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -48,6 +50,8 @@
   grid-column-start: 2;
   grid-row-end: 3;
   grid-column-end: 2;
+  padding: 0;
+  margin: 0;
 }
 
 .App > .navbar {
@@ -55,13 +59,14 @@
   grid-row-end: 1;
   grid-column-start: 1;
   grid-column-end: 4;
+  padding: 0;
+  margin: 0;
 }
 
 .App > .page-header {
   grid-row-start: 2;
   grid-column-start: 1;
   grid-column-end: 4;
-  margin-top: 15px;
 
 }
 
