@@ -16,11 +16,19 @@ function App() {
 
   return (
     <main className="App">
-
+      { user? (
+      <>
           <NavBar user={user} />
           <PageHeader />
           <MainPage />
           <Rubrik />
+        </>
+      ) : (
+        <>
+        <NavBar setUser={setUser}/>  
+        <AuthPage setUser={setUser} />
+      </>
+      )}
     </main>
   );
 }
