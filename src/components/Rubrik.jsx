@@ -4,31 +4,25 @@ import {useState, useEffect} from 'react'
 
 
 let currentTaskList = []
-console.log(JSON.parse(localStorage.getItem('tasks')))
+let tasksArr = []
+// console.log(JSON.parse(localStorage.getItem('tasks')))
 
 const Rubrik = () => {
-    // const [tasks, setTasks] = useState(savedTaskList ? JSON.parse(localStorage.getItem('tasks')) : [])
+    const [tasks, setTasks] = useState({})
     const [body, setBody] = useState('')
-    const [tasks, setTasks] = useState({
-        id: '',
-        body: body
-    })
-
+    
     const [error, setError] = useState('')
-
+    
     const handleChange = (evt) => {
-        setTasks({...tasks, ['id']: Date.now().toString(), ['body']: evt.target.value})
+        setTasks({...tasks, ['id']: Date.now().toString(), ['body']: evt.target.value, ['isCompleted']: false})
         setError('')
     }
-    console.log(tasks)
-    useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(currentTaskList))
-    }, [tasks])
-
+    
     const addTask = (evt) => {
         evt.preventDefault()
-        setBody(tasks.body)
+        tasksArr.push(tasks)
         setTasks(tasks)
+        setBody(tasks.body)
         currentTaskList.push(tasks.body)
         evt.target.reset()
         // let savedTaskList = JSON.parse(localStorage.getItem('tasks'))
@@ -36,6 +30,15 @@ const Rubrik = () => {
         // console.log(currentTaskList)
     }
 
+
+
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(currentTaskList))
+
+    }, [])
+
+
+    console.log(tasksArr)
     console.log(currentTaskList)
 
 
@@ -57,7 +60,7 @@ const Rubrik = () => {
                 </ul>
                 <div>
                     <form className='task-submit' onSubmit={addTask}>     
-                        <input type='text' placeholder='Add a task' onChange={handleChange} ></input>
+                        <input type='text' placeholder='Add a task'  onChange={handleChange}></input>
                         <button type='submit'>Add</button>
                     </form> 
                 </div>
