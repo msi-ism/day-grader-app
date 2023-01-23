@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react'
-import trashIco from '../images/trash.png'
+import trashIco from '../images/x.png'
 
 let tasksArr = []
 let savedTaskList = JSON.parse(localStorage.getItem('savedTaskList'))

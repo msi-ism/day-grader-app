@@ -21,7 +21,7 @@ const Day = ({day, onClick}) => {
 
     return (
         <div onClick={onClick} className={className}>
-            {day.value === 'padding' ? '' : day.value}
+            <p className='calendar-date'>{day.value === 'padding' ? '' : day.value}</p>
             {day.event && <div className='event'>{day.event.title}</div>}
             {/* {day.event && <div className='gpa'>{numberGrade()}</div>} */}
         </div>

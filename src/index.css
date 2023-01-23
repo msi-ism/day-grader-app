@@ -201,8 +201,16 @@ button:hover {
 .day + .currentDay {
   background-color:#e8f4fa;
 }
+
+.day > .calendar-date {
+  align-self: left;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+}
+
 .event {
-  font-size: 32px;
+  font-size: 42px;
   font-family: 'Gochi Hand';
   padding: 3px;
   color: black;
@@ -294,8 +302,8 @@ button:hover {
 }
 
 .task-item > .trash-button {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   margin-left: 15px;
 }
