@@ -28,29 +28,24 @@ const Rubrik = () => {
     const addTask = (evt) => {
         evt.preventDefault()
         tasksArr.push(tasks)
-        currentTaskList.push(tasks.body)
+        currentTaskList.push(tasks)
         evt.target.reset()
         setBody(tasks.body)
         localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
     }
 
-    const deleteTasks = (evt) => {
-        localStorage.removeItem('savedTaskList')
+    const deleteTask = (id) => {
+        let deleteIndex = currentTaskList.findIndex(task => (task.id === id))
+        console.log(deleteIndex)
+        currentTaskList.splice(deleteIndex, 1)
+        localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
+        console.log(currentTaskList)
         window.location.reload()
 
     }
 
-    // useEffect(() => {
-    //     localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
-    // }, [tasks])
-
-    
     console.log(tasksArr)
     console.log(currentTaskList)
-
-
-
-
 
     return (
         <div className='rubrik-container'>
@@ -62,8 +57,8 @@ const Rubrik = () => {
                 <ul className='task-list'>
                     {currentTaskList.length > 0  ? currentTaskList.map((task, idx) => (
                         <li key={idx} className='task-item'>
-                            <p>{task}</p>
-                            <img src={trashIco} className='trash-button' type='submit' onClick={deleteTasks}></img>
+                            <p>{task.body}</p>
+                            <img src={trashIco} className='trash-button' type='submit' onClick={() => deleteTask(task.id)}></img>
                         </li>
                     )) : 'No tasks'}
                 </ul>
