@@ -1,5 +1,6 @@
 import React from "react";
 import {useState, useEffect} from 'react'
+import TaskList from "./TaskList";
 
 const GradeModal = ({ onSave, onClose }) => {
     const [title, setTitle] = useState('')
@@ -9,13 +10,13 @@ const GradeModal = ({ onSave, onClose }) => {
   return (
     <div>
       <div id="newEventModal">
-        <h2>New Event</h2>
-
+        <h3>Grade Your Day</h3>
+        <TaskList />
         <input className={error ? 'error' : ''} 
         value={title} 
         onChange={e => setTitle(e.target.value)} 
         id="eventTitleInput" 
-        placeholder="Event Title" />
+        placeholder="Notes" />
 
         <button onClick={() => {
             if (title) {
