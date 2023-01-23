@@ -65,12 +65,12 @@ const Rubrik = () => {
                         </li>
                     )) : 'no'}
                 </ul>
-                <div>
+                <div className='add-task'>
                     <form className='task-submit' onSubmit={addTask}>     
                         <input type='text' placeholder='Add a task'  onChange={handleChange}></input>
-                        <button type='submit'>Add</button>
+                        <button className='add-button' type='submit'>Add</button>
                     </form> 
-                        <button type='submit' onClick={deleteTasks}>Delete</button>
+                        <button className='delete-button' type='submit' onClick={deleteTasks}>Delete</button>
                 </div>
             </div>
             <div className='gpa-container'>

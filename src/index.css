@@ -269,6 +269,23 @@ button:hover {
   height: 60%;
 }
 
+.criteria-container > .add-task {
+  width: 100%;
+  height: auto;
+}
+.add-task > .task-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: grey;
+}
+
+.task-submit > .add-button {
+  width: 15%;
+}
+
 .rubrik-container > .gpa-container {
   border-top: 2px solid black;
   height: 20%;
