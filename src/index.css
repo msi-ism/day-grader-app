@@ -273,17 +273,46 @@ button:hover {
   width: 100%;
   height: auto;
 }
+
+.criteria-container > .task-list {
+  width: 100%;
+}
+
+.task-list > .task-item {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.task-item > .trash-button {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
 .add-task > .task-submit {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  height: auto;
-  background-color: grey;
+  height: 30px;
 }
 
+.task-submit > .task-input {
+  height: auto;
+  border-radius: 10px;
+}
+
+.task-submit > .task-text {
+  font-size: 16px;
+}
 .task-submit > .add-button {
-  width: 15%;
+  width: auto;
+  height: 100%;
+  margin: 0;
 }
 
 .rubrik-container > .gpa-container {

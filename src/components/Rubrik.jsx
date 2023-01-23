@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react'
+import trashIco from '../images/trash.png'
 
 
 let tasksArr = []
@@ -62,15 +63,15 @@ const Rubrik = () => {
                     {currentTaskList.length > 0  ? currentTaskList.map((task, idx) => (
                         <li key={idx} className='task-item'>
                             <p>{task}</p>
+                            <img src={trashIco} className='trash-button' type='submit' onClick={deleteTasks}></img>
                         </li>
-                    )) : 'no'}
+                    )) : 'No tasks'}
                 </ul>
                 <div className='add-task'>
                     <form className='task-submit' onSubmit={addTask}>     
-                        <input type='text' placeholder='Add a task'  onChange={handleChange}></input>
+                        <input className='task-input' type='text' placeholder='Add a task'  onChange={handleChange}></input>
                         <button className='add-button' type='submit'>Add</button>
                     </form> 
-                        <button className='delete-button' type='submit' onClick={deleteTasks}>Delete</button>
                 </div>
             </div>
             <div className='gpa-container'>
