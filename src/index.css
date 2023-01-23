@@ -202,10 +202,10 @@ button:hover {
   background-color:#e8f4fa;
 }
 .event {
-  font-size: 10px;
+  font-size: 32px;
+  font-family: 'Gochi Hand';
   padding: 3px;
-  background-color: #58bae4;
-  color: white;
+  color: black;
   border-radius: 5px;
   max-height: 55px;
   overflow: hidden;
