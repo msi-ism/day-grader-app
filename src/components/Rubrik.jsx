@@ -2,13 +2,18 @@ import React from 'react';
 import {useState, useEffect} from 'react'
 
 
-
-let currentTaskList = []
 let tasksArr = []
-console.log(JSON.parse(localStorage.getItem('tasksArr')))
+let savedTaskList = JSON.parse(localStorage.getItem('savedTaskList'))
+let currentTaskList = []
+
+if (savedTaskList) {
+    currentTaskList = savedTaskList
+} else {
+    currentTaskList = []
+}
 
 const Rubrik = () => {
-    const [tasks, setTasks] = useState(localStorage.getItem('tasksArr') ? JSON.parse(localStorage.getItem('tasksArr')) : [])
+    const [tasks, setTasks] = useState(localStorage.getItem('savedTaskList') ? JSON.parse(localStorage.getItem('savedTaskList')) : currentTaskList)
     const [body, setBody] = useState()
     const [error, setError] = useState()
     
@@ -23,6 +28,7 @@ const Rubrik = () => {
         currentTaskList.push(tasks.body)
         evt.target.reset()
         setBody(tasks.body)
+        localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
         // let savedTaskList = JSON.parse(localStorage.getItem('tasks'))
         // console.log(savedTaskList)
         // console.log(currentTaskList)
@@ -30,14 +36,14 @@ const Rubrik = () => {
 
 
 
-    useEffect(() => {
-        localStorage.setItem('tasksArr', JSON.stringify(tasksArr))
-    }, [tasks])
+    // useEffect(() => {
+    //     localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
+    // }, [tasks])
 
     
     console.log(tasksArr)
     console.log(currentTaskList)
-    console.log(body)
+
 
 
 
@@ -50,11 +56,11 @@ const Rubrik = () => {
             <div className='criteria-container'>
                 <h2>Daily Goals</h2>
                 <ul className='task-list'>
-                    {currentTaskList.length !== 0 ? currentTaskList.map((task, idx) => (
+                    {currentTaskList.length > 0  ? currentTaskList.map((task, idx) => (
                         <li key={idx} className='task-item'>
                             <p>{task}</p>
                         </li>
-                    )) : ''}
+                    )) : 'no'}
                 </ul>
                 <div>
                     <form className='task-submit' onSubmit={addTask}>     
