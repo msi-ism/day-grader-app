@@ -4,6 +4,8 @@ import {useState, useEffect} from 'react'
 
 let tasksArr = []
 let savedTaskList = JSON.parse(localStorage.getItem('savedTaskList'))
+console.log(savedTaskList)
+console.log(JSON.parse(localStorage.getItem('events')))
 let currentTaskList = []
 
 if (savedTaskList) {
@@ -29,12 +31,13 @@ const Rubrik = () => {
         evt.target.reset()
         setBody(tasks.body)
         localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
-        // let savedTaskList = JSON.parse(localStorage.getItem('tasks'))
-        // console.log(savedTaskList)
-        // console.log(currentTaskList)
     }
 
+    const deleteTasks = (evt) => {
+        localStorage.removeItem('savedTaskList')
+        window.location.reload()
 
+    }
 
     // useEffect(() => {
     //     localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
@@ -67,6 +70,7 @@ const Rubrik = () => {
                         <input type='text' placeholder='Add a task'  onChange={handleChange}></input>
                         <button type='submit'>Add</button>
                     </form> 
+                        <button type='submit' onClick={deleteTasks}>Delete</button>
                 </div>
             </div>
             <div className='gpa-container'>
