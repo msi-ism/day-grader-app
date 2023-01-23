@@ -264,9 +264,16 @@ button:hover {
   margin: 0;
 }
 
+.rubrik-container > .gpa-container {
+  border-top: 2px solid black;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
 .rubrik-container > .criteria-container {
   border-top: 2px solid black;
-  height: 60%;
+  height: 70%;
 }
 
 .criteria-container > .add-task {
@@ -315,7 +322,3 @@ button:hover {
   margin: 0;
 }
 
-.rubrik-container > .gpa-container {
-  border-top: 2px solid black;
-  height: 20%;
-}

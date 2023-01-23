@@ -34,14 +34,13 @@ const Rubrik = () => {
         localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
     }
 
+
+    // ^ function to delete individual tasks by finding task by ID, splicing from current Task list and resaving to local storage
     const deleteTask = (id) => {
         let deleteIndex = currentTaskList.findIndex(task => (task.id === id))
-        console.log(deleteIndex)
         currentTaskList.splice(deleteIndex, 1)
         localStorage.setItem('savedTaskList', JSON.stringify(currentTaskList))
-        console.log(currentTaskList)
         window.location.reload()
-
     }
 
     console.log(tasksArr)
@@ -58,16 +57,17 @@ const Rubrik = () => {
                     {currentTaskList.length > 0  ? currentTaskList.map((task, idx) => (
                         <li key={idx} className='task-item'>
                             <p>{task.body}</p>
-                            <img src={trashIco} className='trash-button' type='submit' onClick={() => deleteTask(task.id)}></img>
+                           <img src={trashIco} className='trash-button' type='submit' onClick={() => deleteTask(task.id)}></img>
                         </li>
                     )) : 'No tasks'}
                 </ul>
+                {currentTaskList.length < 5 ? 
                 <div className='add-task'>
                     <form className='task-submit' onSubmit={addTask}>     
                         <input className='task-input' type='text' placeholder='Add a task'  onChange={handleChange}></input>
                         <button className='add-button' type='submit'>Add</button>
                     </form> 
-                </div>
+                </div>: '' }
             </div>
             <div className='gpa-container'>
                 <h2>Current GPA:</h2>
