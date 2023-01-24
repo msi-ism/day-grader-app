@@ -148,7 +148,7 @@ button:hover {
   outline: none;
   padding: 10px;
   border-radius: 5px;
-  background-color: lightgreen;
+  background-color:  #824C88;
   color: black;
 }
 
@@ -209,7 +209,7 @@ button:hover {
   width: 20px;
 }
 
-.event {
+.grade {
   font-size: 42px;
   font-family: 'Gochi Hand';
   padding: 3px;
@@ -328,5 +328,9 @@ button:hover {
   width: auto;
   height: 100%;
   margin: 0;
+}
+
+.selected-grade {
+  background-color: #824C88;
 }
 

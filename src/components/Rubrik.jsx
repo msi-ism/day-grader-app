@@ -2,6 +2,8 @@ import React from 'react';
 import {useState, useEffect} from 'react'
 import TaskList from './TaskList';
 
+console.log(JSON.parse(localStorage.getItem('events')))
+
 const Rubrik = () => {
     return (
         <div className='rubrik-container'>
