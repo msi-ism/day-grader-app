@@ -8,24 +8,9 @@ import DeleteGradeModal from "./DeleteGradeModal";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 
-const numberGrade = (letter) => {
-    if (letter == 'F') {
-        return (Math.round(0 * 100) / 100).toFixed(1)
-    } else if (letter == 'D') {
-        return (Math.round(1 * 100) / 100).toFixed(1)
-    } else if (letter == 'C') {
-        return (Math.round(2 * 100) / 100).toFixed(1)
-    } else if (letter == 'B') {
-        return (Math.round(3 * 100) / 100).toFixed(1)
-    } else if (letter == 'A') {
-        return (Math.round(4 * 100) / 100).toFixed(1)
-    }    
-
-}
 
 
-
-const CalendarComponent = () => {
+const CalendarComponent = ({setGPA}) => {
 
 // //^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
 const [nav, setNav] = useState(0)
@@ -136,7 +121,15 @@ let gradesArr = []
     }    
 }
 
+let total = 0
+for (let i=0; i < gradesArr.length; i++) {
+    total += i
+}
+
+let gpa = total / gradesArr.length
+setGPA(gpa)
  console.log(gradesArr)
+ console.log(gpa)
 
 
   return (

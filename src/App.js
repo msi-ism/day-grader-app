@@ -12,6 +12,7 @@ import PageHeader from './components/PageHeader';
 
 function App() {
   const [user,  setUser] = useState(getUser())
+  const [gpa, setGPA] = useState('')
 
 
   return (
@@ -19,8 +20,8 @@ function App() {
 
           <NavBar user={user} />
           <PageHeader />
-          <MainPage />
-          <Rubrik />
+          <MainPage setGPA={setGPA}/>
+          <Rubrik gpa={gpa} />
     </main>
   );
 }

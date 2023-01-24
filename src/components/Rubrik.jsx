@@ -4,7 +4,7 @@ import TaskList from './TaskList';
 
 console.log(JSON.parse(localStorage.getItem('events')))
 
-const Rubrik = () => {
+const Rubrik = ({gpa}) => {
     return (
         <div className='rubrik-container'>
             <div className='rubrik-header'>
@@ -16,7 +16,7 @@ const Rubrik = () => {
             </div>
             <div className='gpa-container'>
                 <h2>Current GPA:</h2>
-                <h4>3.75</h4>
+                <h4>{gpa}</h4>
             </div>
             
         </div>

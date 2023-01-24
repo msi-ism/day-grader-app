@@ -3,11 +3,11 @@ import CalendarComponent from '../components/CalendarComponent';
 import Day from '../components/Day';
 import Rubrik from '../components/Rubrik';
 
-const MainPage = () => {
+const MainPage = ({setGPA}) => {
     return (
         <div className='main-container'>
             <div className='calendar-container'>
-                <CalendarComponent />
+                <CalendarComponent setGPA={setGPA}/>
             </div>
         </div>
     );
