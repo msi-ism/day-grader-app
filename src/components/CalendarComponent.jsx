@@ -5,6 +5,7 @@ import Day from "./Day";
 import { setDate } from "date-fns";
 import GradeModal from "./GradeModal";
 import DeleteGradeModal from "./DeleteGradeModal";
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 
 const numberGrade = (letter) => {
@@ -36,12 +37,15 @@ const [dateDisplay, setDateDisplay] = useState()
 const [clicked, setClicked] = useState(null)
 // ^ setting state for events - checks local storage for event object and returns it or empty array if N/A
 const [events, setEvents] = useState(localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [])
+console.log(events)
 // ^ set Grade
 const [grade, setGrade] = useState('')
 
 // ^ Helper Function - for each event we want to find the one where the event date matches the date that is passed
 const eventForDate = date => events.find(e => e.date === date)
 
+
+   
 
 
 // ^ writing function to check for date changes in local storage. Each time events changes, the events is updated in local storage
@@ -84,7 +88,6 @@ useEffect(() => {
 
     for (let i = 1; i <= paddingDays + daysInMonth; i++) {
         const dayString = `${month + 1}/${i - paddingDays}/${year}`
-        console.log(grade)
         if (i > paddingDays) {
             daysArr.push({
                 value: i - paddingDays,
@@ -107,9 +110,33 @@ useEffect(() => {
     setDays(daysArr)
 }, [events, nav])
 
+let gradesArr = []
+ for (let i = 0; i < days.length; i++) {
+    if (days[i].event)
+    gradesArr.push(days[i].event.grade)
+ }
+ 
+ for (let i=0; i < gradesArr.length; i++) {
+    if (gradesArr[i] == 'F') {
+        gradesArr[i] = (Math.round(0 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'D') {
+        gradesArr[i] = (Math.round(1 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'D+') {
+        gradesArr[i] = (Math.round(1.5 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'C') {
+        gradesArr[i] = (Math.round(2 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'C+') {
+        gradesArr[i] = (Math.round(2.5 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'B') {
+        gradesArr[i] = (Math.round(3 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'B+') {
+        gradesArr[i] = (Math.round(3.5 * 100) / 100).toFixed(1)
+    } else if (gradesArr[i] == 'A') {
+        gradesArr[i] = (Math.round(4 * 100) / 100).toFixed(1)
+    }    
+}
 
-console.log(days)
-
+ console.log(gradesArr)
 
 
   return (
@@ -153,6 +180,7 @@ console.log(days)
             setEvents([ ...events, { title, date: clicked, grade: grade }])
             setClicked(null)
         }}
+
        />}
     { clicked && eventForDate(clicked) && 
         <DeleteGradeModal 
