@@ -123,10 +123,11 @@ let gradesArr = []
 
 let total = 0
 for (let i=0; i < gradesArr.length; i++) {
-    total += i
+    total += Number(gradesArr[i])
+    console.log(total)
 }
-
-let gpa = total / gradesArr.length
+console.log(total)
+let gpa = (total / gradesArr.length).toFixed(1)
 setGPA(gpa)
  console.log(gradesArr)
  console.log(gpa)
