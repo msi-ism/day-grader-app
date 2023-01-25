@@ -89,7 +89,7 @@
   margin-top: -20px;
   background-image: url('./images/chalkboard.jpg');
   background-size: contain;
-  opacity: .9;
+
   border-width: 15px;
   border-style: solid;
   border-image: url('./images/woodtexture.png') 20% round;
