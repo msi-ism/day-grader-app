@@ -159,6 +159,7 @@ button:hover {
   font-family: sans-serif;
   display: flex;
   justify-content: space-between;
+  margin-top: -20px;
 }
 #header button {
   background-color:#92a1d1;

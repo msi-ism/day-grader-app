@@ -10,7 +10,7 @@ import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 
 
-const CalendarComponent = ({setGPA}) => {
+const CalendarComponent = ({setGPA, setCurrentMonth}) => {
 
 // //^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
 const [nav, setNav] = useState(0)
@@ -18,7 +18,6 @@ const [nav, setNav] = useState(0)
 const [days, setDays] = useState([])
 // ^ setting date displayed
 const [dateDisplay, setDateDisplay] = useState()
-const [fullDateDisplay, setFullDateDisplay] = useState()
 // ^ setting clicked state for days
 const [clicked, setClicked] = useState(null)
 // ^ setting state for events - checks local storage for event object and returns it or empty array if N/A
@@ -66,6 +65,7 @@ useEffect(() => {
     })
 
     setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'long' })} ${year}`)
+    setCurrentMonth(`${date.toLocaleDateString('en-us', { month: 'long' })}`)
 
 
     const paddingDays = weekdays.indexOf(dateString.split(', ')[0])

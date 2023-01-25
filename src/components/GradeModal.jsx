@@ -7,8 +7,22 @@ const GradeModal = ({ onSave, onClose, setGrade }) => {
     const [error, setError] = useState(false)
 
     const pickGrade = (e) => {
-        e.target.classList.add('selected-grade')
+        let currentSelection = e.target
+        let gradeButtons = document.querySelectorAll('.grade-btn')
+        if (!currentSelection.classList.contains('selected-grade')) {
+            currentSelection.classList.add('selected-grade')
+        } 
+        gradeButtons.forEach((ele) => {
+            if (ele !== currentSelection) {
+             ele.classList.remove('selected-grade')}})
+                
+        console.log(currentSelection)
+        console.log(gradeButtons)
         setGrade(e.target.innerText)
+    }
+
+    const clearSelection = (e) => {
+
     }
 
   return (
