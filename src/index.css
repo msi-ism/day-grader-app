@@ -299,6 +299,12 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+.task-item:hover  .trash-button {
+  display: block;
+  cursor: pointer;
 }
 
 .task-item > .trash-button {
@@ -306,6 +312,7 @@ button:hover {
   height: 15px;
   cursor: pointer;
   margin-left: 15px;
+  display: none;
 }
 
 .add-task > .task-submit {

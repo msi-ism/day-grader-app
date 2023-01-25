@@ -17,7 +17,6 @@ const GradeModal = ({ onSave, onClose, setGrade }) => {
         <h3>Grade Your Day</h3>
         <TaskList />
         <div className='grade-buttons'>
-            <button className="grade-btn" onClick={pickGrade}>A+</button>
             <button className="grade-btn" onClick={pickGrade}>A</button>
             <button className="grade-btn" onClick={pickGrade}>B+</button>
             <button className="grade-btn" onClick={pickGrade}>B</button>
