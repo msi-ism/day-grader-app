@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Just+Another+Hand&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Dosis:wght@400;700&family=Inter&family=Manrope:wght@500&family=Public+Sans:wght@300;500&family=Quicksand&family=Rubik:wght@400;600&family=Unbounded&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Walter+Turncoat');
+
 
 
 
@@ -43,9 +47,9 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 32px;
   margin: 0;
-  margin-top: 15px;
+  font-family: 'Walter Turncoat';
 }
 
 h4 {
@@ -148,26 +152,30 @@ button:hover {
   outline: none;
   padding: 10px;
   border-radius: 5px;
-  background-color:  #824C88;
-  color: black;
+  background-color: white;
+  color:  #824C88;
 }
 
 #header {
   padding: 10px;
   color: #d36c6c;
   font-size: 26px;
-  font-family: sans-serif;
+  font-family: 'Manrope';
   display: flex;
   justify-content: space-between;
   margin-top: -20px;
 }
 #header button {
-  background-color:#92a1d1;
+  background-color: #824C88;
+}
+#header button:hover {
+  background-color: white;
 }
 #calendar-container {
   width: 700px;
 }
 #weekdays {
+  font-family: 'Manrope';
   width: 100%;
   display: flex;
   color: #247BA0;
@@ -255,6 +263,11 @@ button:hover {
 #saveButton, #closeButton {
   background-color: #92a1d1;
 }
+
+.nextButton, .backButton {
+  font-family: 'Manrope';
+}
+
 #eventText {
   font-size: 14px;
 }
@@ -268,21 +281,32 @@ button:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
+#monthDisplay {
+  color: black;
+}
+
+.page-header > .page-title {
+  font-family: 'Manrope';
+}
+
 .rubrik-container > .rubrik-header {
-  height: 10%;
   margin: 0;
+  font-family: 'Walter Turncoat';
+
 }
 
 .rubrik-container > .gpa-container {
-  border-top: 2px solid black;
+  border-top: 3px solid grey;
   height: auto;
   margin: 0;
   padding: 0;
+  font-family: 'Walter Turncoat';
+  padding-top: 10px;
 }
 
 .rubrik-container > .criteria-container {
-  border-top: 2px solid black;
-  height: 70%;
+  height: 80%;
+  padding-top: 15px;
 }
 
 .criteria-container > .add-task {
@@ -295,7 +319,7 @@ button:hover {
 }
 
 .task-list > .task-item {
-  font-size: 18px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;

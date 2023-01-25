@@ -178,6 +178,7 @@ setGPA(gpa)
        />}
     { clicked && eventForDate(clicked) && 
         <DeleteGradeModal 
+        grade={eventForDate(clicked).grade}
         fullDateDisplay={eventForDate(clicked).date}
         eventText={eventForDate(clicked).title}
         onClose={() => setClicked(null)}

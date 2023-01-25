@@ -7,9 +7,9 @@ console.log(JSON.parse(localStorage.getItem('events')))
 const Rubrik = ({gpa, currentMonth}) => {
     return (
         <div className='rubrik-container'>
-            <div className='rubrik-header'>
+            {/* <div className='rubrik-header'>
                 <h2>Rubrik</h2>
-            </div>
+            </div> */}
             <div className='criteria-container'>
                 <h2>Daily Goals</h2>
                 <TaskList />
