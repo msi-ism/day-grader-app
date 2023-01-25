@@ -34,13 +34,10 @@ const GradeModal = ({ onSave, onClose, setGrade }) => {
         placeholder="Notes" />
 
         <button onClick={() => {
-            if (title) {
-                setError(false)
+   
                 onSave(title)
 
-            } else {
-                setError(true)
-            }
+       
         }} id="saveButton">Save</button>
         <button onClick={onClose} id="cancelButton">Cancel</button>
       </div>

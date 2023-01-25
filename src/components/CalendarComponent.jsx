@@ -18,6 +18,7 @@ const [nav, setNav] = useState(0)
 const [days, setDays] = useState([])
 // ^ setting date displayed
 const [dateDisplay, setDateDisplay] = useState()
+const [fullDateDisplay, setFullDateDisplay] = useState()
 // ^ setting clicked state for days
 const [clicked, setClicked] = useState(null)
 // ^ setting state for events - checks local storage for event object and returns it or empty array if N/A
@@ -66,11 +67,10 @@ useEffect(() => {
 
     setDateDisplay(`${date.toLocaleDateString('en-us', { month: 'long' })} ${year}`)
 
+
     const paddingDays = weekdays.indexOf(dateString.split(', ')[0])
 
-
-    const daysArr = []
-
+    const daysArr = []    
     for (let i = 1; i <= paddingDays + daysInMonth; i++) {
         const dayString = `${month + 1}/${i - paddingDays}/${year}`
         if (i > paddingDays) {
@@ -178,6 +178,7 @@ setGPA(gpa)
        />}
     { clicked && eventForDate(clicked) && 
         <DeleteGradeModal 
+        fullDateDisplay={eventForDate(clicked).date}
         eventText={eventForDate(clicked).title}
         onClose={() => setClicked(null)}
         onDelete={() => {
