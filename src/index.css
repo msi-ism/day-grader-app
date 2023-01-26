@@ -139,7 +139,7 @@ button {
   outline: none;
   padding: 10px;
   border-radius: 5px;
-  background-color: blue;
+  background-color: #247BA0;
   color: white;
 }
 button:hover {
@@ -152,8 +152,8 @@ button:hover {
   outline: none;
   padding: 10px;
   border-radius: 5px;
-  background-color: white;
-  color:  #824C88;
+  background-color: #824C88;
+  color:  white;
 }
 
 #header {
@@ -261,7 +261,7 @@ button:hover {
   background-color: #d36c6c;
 }
 #saveButton, #closeButton {
-  background-color: #92a1d1;
+  background-color: #ADCF9F;
 }
 
 .nextButton, .backButton {
@@ -287,6 +287,10 @@ button:hover {
 
 .page-header > .page-title {
   font-family: 'Manrope';
+}
+.page-header > .page-sub-title {
+  font-family: 'Manrope';
+  color: #9F73AB;
 }
 
 .rubrik-container > .rubrik-header {
@@ -351,6 +355,7 @@ button:hover {
 .task-submit > .task-input {
   height: auto;
   border-radius: 10px;
+  padding-left: 8px;
 }
 
 .task-submit > .task-text {

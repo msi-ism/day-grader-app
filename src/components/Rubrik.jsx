@@ -16,7 +16,7 @@ const Rubrik = ({gpa, currentMonth}) => {
             </div>
             <div className='gpa-container'>
                 <h2>{currentMonth}'s GPA:</h2>
-                <h4>{gpa}</h4>
+                <h4>{gpa > 0 ? gpa : 'N/A' }</h4>
             </div>
             
         </div>

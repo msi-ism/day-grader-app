@@ -29,7 +29,7 @@ const GradeModal = ({ onSave, onClose, setGrade }) => {
     <div>
       <div id="newEventModal">
         <h3>Grade Your Day</h3>
-        <TaskList />
+        {/* <TaskList /> */}
         <div className='grade-buttons'>
             <button className="grade-btn" onClick={pickGrade}>A</button>
             <button className="grade-btn" onClick={pickGrade}>B+</button>
@@ -38,7 +38,6 @@ const GradeModal = ({ onSave, onClose, setGrade }) => {
             <button className="grade-btn" onClick={pickGrade}>C</button>
             <button className="grade-btn" onClick={pickGrade}>D+</button>
             <button className="grade-btn" onClick={pickGrade}>D</button>
-            <button className="grade-btn" onClick={pickGrade}>F</button>
         </div>
         <input className={error ? 'error' : ''} 
         value={title} 

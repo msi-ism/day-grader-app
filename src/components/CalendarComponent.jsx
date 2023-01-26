@@ -102,9 +102,7 @@ let gradesArr = []
  }
  
  for (let i=0; i < gradesArr.length; i++) {
-    if (gradesArr[i] == 'F') {
-        gradesArr[i] = (Math.round(0 * 100) / 100).toFixed(1)
-    } else if (gradesArr[i] == 'D') {
+     if (gradesArr[i] == 'D') {
         gradesArr[i] = (Math.round(1 * 100) / 100).toFixed(1)
     } else if (gradesArr[i] == 'D+') {
         gradesArr[i] = (Math.round(1.5 * 100) / 100).toFixed(1)
