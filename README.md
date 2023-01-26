@@ -42,5 +42,6 @@ App Landing Page
 ## Upcoming Features
 - Dark Mode
 - A data view with charts and/or other visual feedback tools
+- Mobile responsiveness
 
 
