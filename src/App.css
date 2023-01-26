@@ -88,8 +88,8 @@
   justify-self: center;
   margin-top: -20px;
   background-image: url('./images/chalkboard.jpg');
-  background-size: contain;
-
+  background-size: cover;
+  background-repeat: no-repeat;
   border-width: 15px;
   border-style: solid;
   border-image: url('./images/woodtexture.png') 20% round;
