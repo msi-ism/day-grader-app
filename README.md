@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+Grade Your Days - Grow Your Life
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link to App
 
-## Available Scripts
+https://gradeyourdays.herokuapp.com/
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This app was inspired by [this clip](https://www.youtube.com/watch?v=MsZK6eFXW-o&t=233s&ab_channel=IMPAULSIVEClips) I recently saw from Rob Dyrdek on how rating each day of his life improved his self-awareness and productivity because it provided data that could be used to track trends over time which eventually lead to insights about why & how his life is going over all.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This idea was really intriguing to me and I wanted to try it for myself as I've wanted to become more disciplined and consistent about the things that are important to me. I wasn't aware of any apps that were specifically geared towards grading your days so I decided to build one myself.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The basic functionality of the app is as follows:
+ - users can add up to 5 daily tasks to a chalkboard as a reminder of the goals they'd like to achieve for each day
+ - users can click on any day on a calendar and grade that day subjectively based on how they feel they performed that day with the option to add notes about that particular day
+ - users are provided visual feedback at a glance of how they are performing on a month to month basis accompanied by a monthly GPA at the bottom of the chalkboard
 
-### `npm test`
+ I went back and forth with myself about whether the grading should be subjective based on how the use felt like they performed or if the grading should be objective based on how if they completed the tasks they assigned themselves.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ I decided to keep it subjective for now because they point of this tool is to increase self-awareness and self-accountability. In order to be accountable, you have to be honest with yourself about how you're doing. So leaving the grading subjective gives the user a greater opportunity to hold themselves accountable.
 
-### `npm run build`
+ That being said, you'll notice that you don't have the ability to give yourself an "F" because I wholeheartedly believe that no day is a failure. And if you're willing to use a tool like this to help improve your quality of life, then you're already doing more than most people would to improve your life and that in and of itself is a major success.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ The app was built using React for the front end and local storage for data storage & retrieval.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There are a few more features that I have planned but first I would like to get some users and hear whether or not this is something that people would actually use so that they can help guide development.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Images
 
-### `npm run eject`
+App Landing Page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="public/images/daygraderpage.png" width="400">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tech Stack
+    - React.js
+    - Javascript
+    - CSS 
+    - HTML 
+    
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Upcoming Features
+- Dark Mode
+- A data view with charts and/or other visual feedback tools
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
