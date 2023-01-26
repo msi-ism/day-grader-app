@@ -184,6 +184,9 @@ button:hover {
   width: 100px;
   padding: 10px;
 }
+#weekdays > .weekend {
+  color: rgb(189, 47, 47);
+}
 #calendar {
   width: 100%;
   margin: auto;
@@ -244,6 +247,13 @@ button:hover {
   position: absolute;
   font-family: sans-serif;
 }
+#deleteEventModal > .modal-title {
+  font-family: 'Manrope';
+}
+#deleteEventModal > .modal-sub-title {
+  font-family: 'Walter Turncoat';
+}
+
 #eventTitleInput {
   padding: 10px;
   width: 100%;
@@ -261,7 +271,7 @@ button:hover {
   background-color: #d36c6c;
 }
 #saveButton, #closeButton {
-  background-color: #ADCF9F;
+  background-color: #824C88;
 }
 
 .nextButton, .backButton {
@@ -356,6 +366,7 @@ button:hover {
   height: auto;
   border-radius: 10px;
   padding-left: 8px;
+  font-family: 'Gochi Hand';
 }
 
 .task-submit > .task-text {
@@ -365,9 +376,12 @@ button:hover {
   width: auto;
   height: 100%;
   margin: 0;
+  font-family: 'Gochi Hand';
+  background-color: #9F73AB;;
 }
 
 .selected-grade {
   background-color: #824C88;
 }
+
 

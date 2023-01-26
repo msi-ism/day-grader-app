@@ -140,13 +140,13 @@ setGPA(gpa)
       onBack={() => setNav(nav - 1)}
       />
       <div id="weekdays">
-        <div>Sunday</div>
+        <div className='weekend'>Sunday</div>
         <div>Monday</div>
         <div>Tuesday</div>
         <div>Wednesday</div>
         <div>Thursday</div>
         <div>Friday</div>
-        <div>Saturday</div>
+        <div className='weekend'>Saturday</div>
       </div>
       <div id='calendar'>
         {days.map((day, idx) => ( 

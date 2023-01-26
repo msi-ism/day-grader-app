@@ -4,10 +4,10 @@ const DeleteGradeModal = ({onDelete, eventText, onClose, fullDateDisplay, grade}
   return (
     <div>
       <div id="deleteEventModal">
-        <h2>{fullDateDisplay}</h2>
-        <h3>Today's Grade: {grade}</h3>
+        <h2 className='modal-title'>{fullDateDisplay}</h2>
+        <h3>Grade: {grade}</h3>
         <h4>Notes:</h4>
-        <p id="eventText">{eventText}</p>
+        <p id="eventText">{eventText ? eventText : 'No notes'}</p>
 
         <button onClick={onDelete} id="deleteButton">Delete</button>
         <button onClick={onClose} id="closeButton">Close</button>
