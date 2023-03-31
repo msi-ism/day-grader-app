@@ -8,8 +8,8 @@
   padding: 0;
   margin: 0;
 
-
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -93,4 +93,53 @@
   border-width: 15px;
   border-style: solid;
   border-image: url('./images/woodtexture.png') 20% round;
+}
+
+@media only screen and (max-width: 900px) {
+  .App {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .App > .main-container {
+
+    padding: 0;
+    margin: 0;
+  }
+  
+  .App > .navbar {
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  .App > .page-header {
+
+    margin-top: 20px;
+  
+  }
+  
+  .App > .rubrik-container {
+    height: auto;
+    margin: 15px;
+    font-family: 'Gochi Hand', cursive;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,1);
+    box-shadow: 0px 0px 2px rgba(0,0,0,1);
+    justify-self: center;
+    background-image: url('./images/chalkboard.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-width: 15px;
+    border-style: solid;
+    border-image: url('./images/woodtexture.png') 20% round;
+  }
+  
 }

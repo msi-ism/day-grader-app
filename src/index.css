@@ -5,8 +5,6 @@
 @import url('https://fonts.googleapis.com/css?family=Walter+Turncoat');
 
 
-
-
 html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -180,6 +178,11 @@ button:hover {
   display: flex;
   color: #247BA0;
 }
+
+.short-wkday {
+    display: none;
+}
+
 #weekdays div {
   width: 100px;
   padding: 10px;
@@ -384,4 +387,248 @@ button:hover {
   background-color: #824C88;
 }
 
+/* ^ Start media queries */
+
+@media only screen and (max-width: 900px) {
+  html, body, #app, #app>div {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* background: linear-gradient(-45deg, #FFFFFF, #824C88); */
+    padding: 0vmin;
+    margin: 0;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+  }
+
+  .nextButton, .backButton {
+    font-family: 'Manrope';
+    font-size: 14px;
+    padding: 10px;
+
+  }
+  
+
+
+#calendar-container {
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+}
+
+#weekdays {
+  font-family: 'Manrope';
+  width: auto;
+  display: flex;
+  color: #247BA0;
+  font-size: 10px;
+}
+#weekdays div {
+  width: 25px;
+  padding: 14px;
+
+}
+#weekdays > .weekend {
+  color: rgb(189, 47, 47);
+}
+.long-wkday {
+  display: none;
+}
+
+.short-wkday {
+  display: block;
+}
+
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+.day {
+  width: 45px;
+  padding: 10px;
+  height: 45px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 4px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+.day:hover {
+  background-color: #e8faed;
+}
+
+.day + .currentDay {
+  background-color:#e8f4fa;
+}
+
+.day > .calendar-date {
+  align-self: left;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  font-size: 10px;
+}
+
+.grade {
+  padding: 0;
+  font-size: 15px;
+  font-family: 'Gochi Hand';
+  padding: 7px;
+  color: black;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+  align-self: center;
+
+}
+
+.page-header > .page-title {
+  font-family: 'Manrope';
+  margin-top: -30px;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+.page-header > .page-sub-title {
+  font-family: 'Manrope';
+  color: #9F73AB;
+  font-size: 18px;
+  margin: 10px;
+}
+
+#newEventModal, #deleteEventModal {
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 300px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#deleteEventModal > .modal-title {
+  font-family: 'Manrope';
+}
+#deleteEventModal > .modal-sub-title {
+  font-family: 'Walter Turncoat';
+}
+
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+  background-color: #824C88;
+}
+
+
+.rubrik-container > .rubrik-header {
+  margin: 0;
+  font-family: 'Walter Turncoat';
+
+}
+
+.rubrik-container > .gpa-container {
+  border-top: 3px solid grey;
+  height: auto;
+  margin-top: 15px;
+  padding: 7px;
+  font-family: 'Walter Turncoat';
+  padding-top: 10px;
+}
+
+.rubrik-container > .criteria-container {
+  height: auto;
+  padding-top: 15px;
+}
+
+.criteria-container > .add-task {
+  width: 100%;
+  height: auto;
+}
+
+.criteria-container > .task-list {
+  width: 100%;
+}
+
+.task-list > .task-item {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+.task-item:hover  .trash-button {
+  display: block;
+  cursor: pointer;
+}
+
+.task-item > .trash-button {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-left: 15px;
+  display: none;
+}
+
+.add-task > .task-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+}
+
+.task-submit > .task-input {
+  height: auto;
+  border-radius: 10px;
+  padding-left: 8px;
+  font-family: 'Gochi Hand';
+}
+
+.task-submit > .task-text {
+  font-size: 16px;
+}
+.task-submit > .add-button {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  font-family: 'Gochi Hand';
+  background-color: #9F73AB;;
+}
+
+.selected-grade {
+  background-color: #824C88;
+}
+  
+}
 

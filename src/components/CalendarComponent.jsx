@@ -12,7 +12,7 @@ import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 const CalendarComponent = ({setGPA, setCurrentMonth}) => {
 
-// //^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
+// ^ creating nav state for month selection. '0' is current month. +1 is next. -1 is prior.
 const [nav, setNav] = useState(0)
 // ^ setting days
 const [days, setDays] = useState([])
@@ -140,13 +140,13 @@ setGPA(gpa)
       onBack={() => setNav(nav - 1)}
       />
       <div id="weekdays">
-        <div className='weekend'>Sunday</div>
-        <div>Monday</div>
-        <div>Tuesday</div>
-        <div>Wednesday</div>
-        <div>Thursday</div>
-        <div>Friday</div>
-        <div className='weekend'>Saturday</div>
+        <div className='weekend'><span className='long-wkday'>Sunday</span><span className="short-wkday">Sun.</span></div>
+        <div><span className='long-wkday'>Monday</span><span className="short-wkday">Mon.</span></div>
+        <div><span className='long-wkday'>Tuesday</span><span className="short-wkday">Tues.</span></div>
+        <div><span className='long-wkday'>Wednesday</span><span className="short-wkday">Wedns.</span></div>
+        <div><span className='long-wkday'>Thursday</span><span className="short-wkday">Thurs.</span></div>
+        <div><span className='long-wkday'>Friday</span><span className="short-wkday">Fri.</span></div>
+        <div className='weekend'><span className='long-wkday'>Saturday</span><span className="short-wkday">Sat.</span></div>
       </div>
       <div id='calendar'>
         {days.map((day, idx) => ( 
