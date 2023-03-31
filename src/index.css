@@ -407,11 +407,16 @@ button:hover {
 
   .nextButton, .backButton {
     font-family: 'Manrope';
-    font-size: 14px;
-    padding: 10px;
+    font-size: 12px;
+    padding: 7px;
 
   }
   
+  #monthDisplay {
+    color: black;
+    font-size: 25px;
+    margin-top: 8px;
+  }
 
 
 #calendar-container {

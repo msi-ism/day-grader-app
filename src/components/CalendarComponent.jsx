@@ -143,7 +143,7 @@ setGPA(gpa)
         <div className='weekend'><span className='long-wkday'>Sunday</span><span className="short-wkday">Sun.</span></div>
         <div><span className='long-wkday'>Monday</span><span className="short-wkday">Mon.</span></div>
         <div><span className='long-wkday'>Tuesday</span><span className="short-wkday">Tues.</span></div>
-        <div><span className='long-wkday'>Wednesday</span><span className="short-wkday">Wedns.</span></div>
+        <div><span className='long-wkday'>Wednesday</span><span className="short-wkday">Wed.</span></div>
         <div><span className='long-wkday'>Thursday</span><span className="short-wkday">Thurs.</span></div>
         <div><span className='long-wkday'>Friday</span><span className="short-wkday">Fri.</span></div>
         <div className='weekend'><span className='long-wkday'>Saturday</span><span className="short-wkday">Sat.</span></div>
