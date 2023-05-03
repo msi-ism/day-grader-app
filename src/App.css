@@ -95,7 +95,7 @@
   border-image: url('./images/woodtexture.png') 20% round;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
   .App {
     text-align: center;
     width: 100%;
